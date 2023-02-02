@@ -4,7 +4,7 @@
 **PS Batch YubiKey Config** is a YubiKey batch configuration tool for the YubiKey Manager, written in Powershell. 
 
 
-* Quickly program entire *trays* worth of YubiKeys with **YubiOTP**, **HOTP** or **TOTP** seeds
+* Simple to use! Quickly program entire *trays* worth of YubiKeys with **YubiOTP**, **HOTP** or **TOTP** seeds
 * Script [exports a well configured CSV file full of seed values](Images/seed_file.PNG) for easy import into Okta/Duo/Azure/etc.
 * Script is completely **offline** and relies on **no dependancies** other than Yubico's own YubiKey Manager software.
 * Friendly command line UI [shows you how many YubiKeys you've programmed](Images/batch_programming_screen.PNG) during your batch programming session
