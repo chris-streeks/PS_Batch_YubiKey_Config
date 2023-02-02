@@ -1,32 +1,30 @@
 # PS Batch YubiKey Config
-![Powershell Window](Images/main_window.PNG)
-
-A YubiKey batch configuration tool for the YubiKey Manager, written in Powershell
 
 
+**PS Batch YubiKey Config** is a YubiKey batch configuration tool for the YubiKey Manager, written in Powershell
 
-**Core Features**
-- Program several YubiKeys with YubiOTP or (H/T)OTP seeds in batch. Script adds seed values to the CSV file of your choosing. 
-- [Exports to CSV already configured](https://github.com/chris-streeks/PS_Batch_YubiKey_Config/blob/main/Images/seed_file.PNG) for easy import into Okta/Duo/etc.
-- Command Line UI to [show you how far you've progressed](Images/batch_programming_screen.PNG) in your batch programming session
-- You may choose to batch configure an access code to each YubiKey, preventing users from reprogramming the devices
-- Dropped a Yubikey out of the tray? No worries! This script can prevent you from accidentally reprogramming a Yubikey during a given session.
 
+* Program several YubiKeys with **YubiOTP**, **HOTP** or **TOTP** seeds in batch.
+* Script [exports a well configured CSV file full of seed values](https://github.com/chris-streeks/PS_Batch_YubiKey_Config/blob/main/Images/seed_file.PNG) for easy import into Okta/Duo/Azure/etc.
+* Command Line UI to [show you how far you've progressed](Images/batch_programming_screen.PNG) during your batch programming session
+* Full support for defining an administrative **access code** for each YubiKey, preventing users from reprogramming their devices
+* Script is completely **offline** and relies on **no dependancies** other than Yubico's own YubiKey Manager software.
 
 ## Requirements
-- Any popular operating system capable of running Powershell
+- Any popular operating system capable of running Powershell (Windows, Linux, macOS)
 - Latest version of the [YubiKey Manager 1.2.4](https://www.yubico.com/products/services-software/download/yubikey-manager/) 
 
 ## Security Recommendations
+- As a general rule of thumb, **never** run Powershell scripts that you do not understand. This script is open source and the code is well documented for a reason! Please free to review my script for yourself and/or ask questions in the form of a [GitHub Issue](https://github.com/chris-streeks/PS_Batch_YubiKey_Config/issues)
+
 - Given that you'll be generating OTP seed values for a large quantity of YubiKeys into a cleartext CSV file, it is recommended that you run this script on an offline machine, taking care to delete the CSV file once you are done uploading it. This script does **not** require network access.
 
 - For clarity on Powershell's default script execution policies, [please review the Microsoft documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7)
-
-- As a general rule of thumb, **never** run Powershell scripts that you do not understand. This script is open source and the code is well documented for a reason! Please free to review my script for yourself and/or ask questions in the form of a [GitHub Issue](https://github.com/chris-streeks/PS_Batch_YubiKey_Config/issues).
+.
 
 ## How to Use (YubiOTP)
 1. Ensure the YubiKey Manager is installed. 
-2. Launch PS_Batch_YubiKey_Config.ps1
+2. Launch `PS_Batch_YubiKey_Config.ps1`
 3. Click Enter on the keyboard when prompted to select a location for the CSV file which will hold the OTP seeds.
 4. Choose whether or not to set an access code to the YubiKeys. (If Yes, The access code will be set to the serial number of the YubiKeys.)
 5. Insert the first YubiKey to program and press the [Enter] key to begin batch programming.
@@ -35,7 +33,7 @@ A YubiKey batch configuration tool for the YubiKey Manager, written in Powershel
 
 ## How to Use (HOTP)
 1. Ensure the YubiKey Manager is installed.
-2. Launch the .ps1 file with the hotp flag attached. **PS_Batch_YubiKey_Config.ps1 -hotp**
+2. Launch the .ps1 file with the hotp flag attached. `PS_Batch_YubiKey_Config.ps1 -hotp`
 3. Click Enter on the keyboard when prompted to select a location for the CSV file which will hold the OTP seeds.
 4. Choose whether or not to set an access code to the YubiKeys. The access code will be set to the serial number of the YubiKeys.
 5. If you choose to set an access code, you will be additionally prompted to set a location to store those access codes.
@@ -45,7 +43,7 @@ A YubiKey batch configuration tool for the YubiKey Manager, written in Powershel
 
 ## How to Use (TOTP)
 1. Ensure the YubiKey Manager is installed.
-2. Launch the .ps1 file with the totp flag attached. **PS_Batch_YubiKey_Config.ps1 -totp**
+2. Launch the .ps1 file with the totp flag attached. `PS_Batch_YubiKey_Config.ps1 -totp`
 3. Click Enter on the keyboard when prompted to select a location for the CSV file which will hold the OTP seeds.
 4. Define the issuer name. As an example, if these are being set up for Microsoft Office 365, "Office 365" might be a good issuer name.
 5. Insert the first YubiKey to program and press the [Enter] key to begin batch programming.
@@ -57,13 +55,13 @@ A YubiKey batch configuration tool for the YubiKey Manager, written in Powershel
 
 
 ## Optional Flags 
-**slot2** - YubiKeys will be programmed in their second slot rather than the default slot 1. 
+**`slot2`** - YubiKeys will be programmed in their second slot rather than the default slot 1. 
 
-**hotp** - YubiKeys will be programmed with HOTP seeds rather than the default YubiOTP
+**`hotp`** - YubiKeys will be programmed with HOTP seeds rather than the default YubiOTP
 
-**totp** - YubiKeys will be programmed with TOTP seeds to the YubiKey's OATH module. This requires the user to use the Yubico Authenticator app to generate TOTPs.
+**`totp`** - YubiKeys will be programmed with TOTP seeds. (User must use [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/) app to generate TOTPs!)
 
-**ignoreduplicates** - Script will not check if a YubiKey has already been programmed during the session
+**`ignoreduplicates`** - Script will not check if a YubiKey has already been programmed during the session
 
-**whatif** - Script will not program YubiKeys and will instead write to the defined CSV file with dummy data. 
+**`whatif`** - Script will not program YubiKeys and will instead write to the defined CSV file with dummy data. 
 
