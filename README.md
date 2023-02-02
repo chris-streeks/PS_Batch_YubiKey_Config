@@ -1,5 +1,5 @@
 # PS Batch YubiKey Config
-![Powershell Window](Images/mainscreen.png)
+![Powershell Window](Images/main_window.PNG)
 A YubiKey batch configuration tool for the YubiKey Manager, written in Powershell
 
 **Core Features**
