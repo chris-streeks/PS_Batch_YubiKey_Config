@@ -3,6 +3,7 @@ Param([switch]$ignoreduplicates,[switch]$whatif,[switch]$hotp,[switch]$slot2,[sw
 ---YubiKey Batch Configuration Tool 0.10---
 AUTHOR
     Chris Streeks
+    https://github.com/chris-streeks/PS_Batch_YubiKey_Config
 
 DESCRIPTION
     Allows you to program several YubiKeys in sequence with YubiOTP seeds (Default), 6 digit HOTP seeds, or 6 digit TOTP seeds.
