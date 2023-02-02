@@ -12,14 +12,13 @@
 
 ![](/Images/main_window.PNG)
 ## 💻 Requirements
-- Any popular operating system capable of running Powershell (Windows, Linux, macOS)
+- Any operating system capable of running [Powershell (Windows, Linux, macOS)](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.3) 
 - Latest version of the [YubiKey Manager](https://www.yubico.com/products/services-software/download/yubikey-manager/) 
 
 ## 🐻 Security Notes
-- As a general rule of thumb, **never** run Powershell scripts that you do not understand. 
-This script is open source and the code is well documented for a reason! Please free to review my script for yourself and/or ask questions in the form of a [GitHub Issue](https://github.com/chris-streeks/PS_Batch_YubiKey_Config/issues)
+- As a general rule of thumb, **never** run Powershell scripts that you do not understand. Always feel free to review this script for yourself and ask questions in the form of a [GitHub Issue](https://github.com/chris-streeks/PS_Batch_YubiKey_Config/issues)
 
-- Given that you'll be generating OTP seed values for a large quantity of YubiKeys into a cleartext CSV file, it is recommended that you run this script on an offline machine, taking care to delete the CSV file once you are done uploading it. This script does **not** require network access.
+- For safety, I recommend that you run this script on a machine that is **disconnected** from your network, taking care to delete the CSV file once you are done uploading it. This script **does not** require network access.
 
 - For clarity on Powershell's default script execution policies, [please review the Microsoft documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7)
 .
@@ -53,10 +52,10 @@ This script is open source and the code is well documented for a reason! Please 
 7. Upload the CSV file to the desired platform, delete the CSV file from your machine.
 
 ## 📖 Microsoft Azure Additional Notes
-1. After programming the YubiKeys, the CSV file will still lack your user's UPN information. Proceed accordingly.
+1. After programming the YubiKeys for TOTP with Microsoft Azure, the CSV file will still lack your user's UPN information. Proceed accordingly.
 
 
-## 🚩 Optional Flags 
+## 🚩 Optional Feature Flags 
 **`slot2`** - YubiKeys will be programmed in their second slot rather than the default slot 1. 
 
 **`hotp`** - YubiKeys will be programmed with HOTP seeds rather than the default YubiOTP
