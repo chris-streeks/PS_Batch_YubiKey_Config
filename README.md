@@ -13,7 +13,7 @@
 ![](/Images/main_window.PNG)
 ## 💻 Requirements
 - Any popular operating system capable of running Powershell (Windows, Linux, macOS)
-- Latest version of the [YubiKey Manager 1.2.4](https://www.yubico.com/products/services-software/download/yubikey-manager/) 
+- Latest version of the [YubiKey Manager](https://www.yubico.com/products/services-software/download/yubikey-manager/) 
 
 ## 🐻 Security Notes
 - As a general rule of thumb, **never** run Powershell scripts that you do not understand. 
