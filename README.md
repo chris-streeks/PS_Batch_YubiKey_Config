@@ -5,7 +5,7 @@
 
 
 * Program several YubiKeys with **YubiOTP**, **HOTP** or **TOTP** seeds in batch.
-* Script [exports a well configured CSV file full of seed values](https://github.com/chris-streeks/PS_Batch_YubiKey_Config/blob/main/Images/seed_file.PNG) for easy import into Okta/Duo/Azure/etc.
+* Script [exports a well configured CSV file full of seed values](https://github.com/chris-streeks/PS_Batch_YubiKey_Config/blob/main/Images/main_window.PNG?raw=true) for easy import into Okta/Duo/Azure/etc.
 * Command Line UI to [show you how far you've progressed](Images/batch_programming_screen.PNG) during your batch programming session
 * Full support for defining an administrative **access code** for each YubiKey, preventing users from reprogramming their devices
 * Script is completely **offline** and relies on **no dependancies** other than Yubico's own YubiKey Manager software.
