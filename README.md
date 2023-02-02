@@ -1,28 +1,28 @@
 # PS Batch YubiKey Config
 ![Powershell Window](Images/main_window.PNG)
+
 A YubiKey batch configuration tool for the YubiKey Manager, written in Powershell
 
-**Core Features**
-Program several YubiKeys with YubiOTP or (H/T)OTP seeds in batch. Script adds seed values to the CSV file of your choosing. 
 
-**Additional Features**
-- Visual UI to show you how far you've progressed in your batch programming session
+
+**Core Features**
+- Program several YubiKeys with YubiOTP or (H/T)OTP seeds in batch. Script adds seed values to the CSV file of your choosing. 
+- [Exports to CSV already configured](https://github.com/chris-streeks/PS_Batch_YubiKey_Config/blob/main/Images/seed_file.PNG) for easy import into Okta/Duo/etc.
+- Command Line UI to [show you how far you've progressed](Images/batch_programming_screen.PNG) in your batch programming session
 - You may choose to batch configure an access code to each YubiKey, preventing users from reprogramming the devices
-- You may choose which slot you'd like to batch configure.
-- Have a lot of YubiKeys to program? No worries! This script will not let you accidentally program a YubiKey you've already programmed during a given session.
-- Exports to CSV already configured for easy import into Okta/Duo/etc.
+- Dropped a Yubikey out of the tray? No worries! This script can prevent you from accidentally reprogramming a Yubikey during a given session.
+
 
 ## Requirements
 - Any popular operating system capable of running Powershell
 - Latest version of the [YubiKey Manager 1.2.4](https://www.yubico.com/products/services-software/download/yubikey-manager/) 
-- Appropriate level of permission to execute Powershell scripts.
 
 ## Security Recommendations
-- Given that you'll be generating OTP seed values for a large quantity of YubiKeys into a cleartext CSV file, it is is recommended that you run this script on an offline machine, taking care to delete the CSV file once it is uploaded to the platform you're using with the YubiKeys.
+- Given that you'll be generating OTP seed values for a large quantity of YubiKeys into a cleartext CSV file, it is recommended that you run this script on an offline machine, taking care to delete the CSV file once you are done uploading it. This script does **not** require network access.
 
-- For clarity on Powershell execution policies, [please review the Microsoft documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7)
+- For clarity on Powershell's default script execution policies, [please review the Microsoft documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7)
 
-- As a general rule of thumb, **never** run powershell scripts that you do not understand. This script is open source and well documented for a reason! Feel free to review the script yourself and/or ask questions in the form of a GitHub Issue.
+- As a general rule of thumb, **never** run Powershell scripts that you do not understand. This script is open source and the code is well documented for a reason! Please free to review my script for yourself and/or ask questions in the form of a [GitHub Issue](https://github.com/chris-streeks/PS_Batch_YubiKey_Config/issues).
 
 ## How to Use (YubiOTP)
 1. Ensure the YubiKey Manager is installed. 
