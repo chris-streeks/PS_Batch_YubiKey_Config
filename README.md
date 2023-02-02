@@ -15,7 +15,7 @@
 - Any popular operating system capable of running Powershell (Windows, Linux, macOS)
 - Latest version of the [YubiKey Manager 1.2.4](https://www.yubico.com/products/services-software/download/yubikey-manager/) 
 
-## 🐻 Security Recommendations
+## 🐻 Security Notes
 - As a general rule of thumb, **never** run Powershell scripts that you do not understand. 
 This script is open source and the code is well documented for a reason! Please free to review my script for yourself and/or ask questions in the form of a [GitHub Issue](https://github.com/chris-streeks/PS_Batch_YubiKey_Config/issues)
 
